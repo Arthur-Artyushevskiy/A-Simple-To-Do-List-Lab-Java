@@ -12,21 +12,30 @@ public class TodoList {
    list = new LinkedHashMap<>();
  }
 
- void add(String name){
-     if(name.isEmpty() || name == null){
+ void add(String task){
+     if(task.isEmpty() || task == null){
          System.out.println("Your task is empty! No task is added to the list.");
          return;
      }
-     list.put(name, false);
+     list.put(task, false);
  }
 
- void complete(String name){
-     if(!list.isEmpty()){
-         list.replace(name, true);
+ void complete(String task){
+     if(isInsideList(task)){
+         list.replace(task, true);
      }
      else{
-         System.out.println("Error: Your List is Empty. Can't set a non-existing task as complete!");
+         System.out.println("The task " + task + " does not exist, therefore can not make it complete!");
+         
      }
+ }
+
+ boolean isInsideList(String task){
+     for(Map.Entry<String, Boolean> entry : list.entrySet()){
+         String key = entry.getKey();
+         if(task.equals(key)) return true;
+     }
+ return false;
  }
 
  ArrayList<String> all(){
