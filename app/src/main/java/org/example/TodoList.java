@@ -13,7 +13,12 @@ public class TodoList {
  }
 
  void add(String task){
-     if(task.isEmpty() || task == null){
+     if(task == null){
+         System.out.println("Your task is Null! No task is added to the list.");
+         return;
+     }
+     else if(task.isEmpty()){
+
          System.out.println("Your task is empty! No task is added to the list.");
          return;
      }
@@ -26,7 +31,7 @@ public class TodoList {
      }
      else{
          System.out.println("The task " + task + " does not exist, therefore can not make it complete!");
-         
+
      }
  }
 

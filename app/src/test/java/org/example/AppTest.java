@@ -55,4 +55,27 @@ class AppTest {
       var list = new TodoList();
       list.complete("Ghost Task");
   }
+
+  @Test
+  void testNonExistingTaskToSetComplete(){
+    var list = new TodoList();
+    list.complete("some non existing task");
+  }
+
+  @Test
+  void testIsInsideList(){
+    var list = new TodoList();
+    list.add("Actual Task");
+    boolean isInside = list.isInsideList("Actual Task");
+    assertEquals(true, isInside);
+    isInside = list.isInsideList("Ghost Task");
+    assertEquals(false, isInside);
+  }
+
+  @Test
+  void testEmptyAndNullTasks(){
+    var list = new TodoList();
+    list.add("");
+    list.add(null);
+  }
 }
