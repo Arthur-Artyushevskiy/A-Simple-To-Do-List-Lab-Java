@@ -4,11 +4,8 @@ public class App {
   public static void main(String[] args) {
     TodoList list = new TodoList();
 
-
-
-    
     list.add("Buy eggs");
-    list.add("Buy eggs");
+    list.add("Buy milk");
     list.add("Prepare a lesson for CSC 122");
     list.add("Sow beet seeds");
 

@@ -3,12 +3,13 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class TodoList {
- private Hashtable<String, Boolean> list;
+ private LinkedHashMap<String, Boolean> list;
 
  TodoList(){
-   list = new Hashtable<>();
+   list = new LinkedHashMap<>();
  }
 
  void add(String name){
@@ -29,7 +30,7 @@ public class TodoList {
      ArrayList<String> allList = new ArrayList<>();
      for(Map.Entry<String, Boolean> entry : list.entrySet()){
         String key = entry.getKey();
-         allList.add(key);
+        allList.add(key);
         System.out.println(key);
 
      }
@@ -69,5 +70,7 @@ ArrayList<String> complete(){
  void clear(){
      list.clear();
  }
+
+
 
 }
