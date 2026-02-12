@@ -77,5 +77,7 @@ class AppTest {
     var list = new TodoList();
     list.add("");
     list.add(null);
+    ArrayList<String> all = list.all();
+    assertEquals(0, all.size());
   }
 }
